@@ -1,0 +1,37 @@
+@startuml
+class Airport
+{
+    - id : int
+    - name : string|null
+    - city :
+
+}
+
+class Airline
+{
+    - id : int
+    - name : string
+    - alias : string
+    - country : string
+    - active : boolean
+    + getId() : int
+    + getName() : string
+    + getAlias() : string
+    + getCountry() : string
+    + getActive() : boolean
+}
+
+class Route {
+    - airlineId : int
+    - airportSourceId : int
+    - airportDestinationId : int
+    - codeShare : string|null
+    - stops : int
+
+}
+
+abstract class Parser{
+    + getData(String path)
+    + setData(
+}
+@enduml
