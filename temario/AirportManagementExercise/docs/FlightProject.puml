@@ -3,8 +3,12 @@ class Airport
 {
     - id : int
     - name : string|null
-    - city :
-
+    - city : string
+    - country : string
+    + getId() : int
+    + getName() : string
+    + getCity() : string
+    + getCountry() : string
 }
 
 class Airline
@@ -27,11 +31,33 @@ class Route {
     - airportDestinationId : int
     - codeShare : string|null
     - stops : int
-
+    + getAirlineId() : int
+    + getAirportSourceId() : int
+    + airportDestinationId() : int
+    + getCodeShare() : string|null
+    + getStops() : int
 }
 
-abstract class Parser{
-    + getData(String path)
-    + setData(
+class FileHandler{
+    - lines : list<string>
+    + FileHandler()
+    + read(path : string) : list<string>
+}
+
+class AirportManagement{
+    - airports : list<Airport>
+    - airlines : list<Airline>
+    - routes : list<Route>
+    + AirportManagement()
+    + getAirlinesByCountry(country : String) : list<Airline>
+    + getPlacesByAirlineName(airlineName : String) : list<Airport>
+    + getPlacesByAirlineCode(airlineCode : String) : list<Airport>
+    - getDataForAirports() : list<Airport>
+    - getDataForAirlines() : list<Airline>
+    - getDataForRoutes() : list<Route>
+}
+
+class Main {
+    + main()
 }
 @enduml
